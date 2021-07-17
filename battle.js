@@ -1,14 +1,58 @@
-var chosenPokemon[];
+// Pokemon array
+var pkmList = [
+    {
+        pokemon: 'squirtle',
+        image: '/Projects/Pokemon/images/Squirtle.png',
+        hp: 100,
+        attack: 50
+    },
+    {
+        pokemon: 'charmander',
+        image: '/Projects/Pokemon/images/Charmander.png',
+        hp: 100,
+        attack: 50
+    },
+    {
+        pokemon: 'bulbasaur',
+        image: '/Projects/Pokemon/images/Bulbasaur.png',
+        hp: 100,
+        attack: 50
+    }
+]
 
-function update(){
-    Cookies.set("battle", chosenPokemon);
+var pokemonSelected = Cookies.get("name");
+
+function selectedPokemon(pokemonSelected) {
+    for (var i = 0; i < pkmList.length; i++) {
+        let pkm = pkmList[i];
+        if (pkm.pokemon === pokemonSelected) {
+            return pkm.pokemon;
+        }
+    } return"No pokemon found";
 }
+
+console.log(selectedPokemon("dog"));
+
+// Battlepage variable declaration
+var header = document.getElementById("header");
+var userPokemon = document.getElementById("userPokemon");
+var cpuPokemon = document.getElementById("cpuPokemon");
+var battleViewport = document.getElementById("battleViewport");
+var userAttacks = document.getElementById("userAttacks");
+var cpuAttacks = document.getElementById("cpuAttacks");
+var Currenthealth = 100;
+var usermaxHealth = 100;
+var chosenPokemon = [];
+
+// function update(){
+//     Cookies.set("battle", chosenPokemon, {expires: 10});
+// }
 
 function PokemonSelect(element){
     var parent = element.parentElement;
     var imgSrc = parent.querySelector('img').getAttribute('src');
     var Pname = parent.querySelector('h3').innerText;
-    var PokemonInfo ={
+    var PokemonInfo = {
         imgLink : imgSrc,
         name : Pname,
     }
@@ -17,23 +61,13 @@ function PokemonSelect(element){
 }
 
 
-
-
-// Clear element function to reset gamestate
+// Clear html element function to reset gamestate
 
 function clearElement(myElement) {
     while (myElement.firstChild) {
         myElement.removeChild(myElement.lastChild);
     }
 }
-
-// Battlepage variable declaration
-var header = document.getElementById("header")
-var userPokemon = document.getElementById("userPokemon");
-var cpuPokemon = document.getElementById("cpuPokemon");
-var battleViewport = document.getElementById("battleViewport");
-var userAttacks = document.getElementById("userAttacks");
-var cpuAttacks = document.getElementById("cpuAttacks")
 
 // Battle sequence logic
 
@@ -44,38 +78,7 @@ function pokemonBattle() {
     clearElement(cpuPokemon);
 }
 
-var chosenPokemon = PokemonSelect();
+// var value = Cookies.get("name");
+// console.log(value);
+// var name = JSON.parse(value);
 
-var value = Cookies.get("battle");
-console.log(value);
-var battle = JSON.parse(value);
-
-function characterSelect(catchEmAll){
-    var catchRow = document.createElement('div');
-    catchRow.classList.add('grid');
-    
-    var pokemonImg = document.createElement('img');
-    pokemonImg.setAttribute('src', player.imgLink);
-    catchRow.append(pokemonImg);
-
-    var name = document.createElement('h3');
-    name.innerText = player.name;
-    catchRow.append(name);
-
-    var attack1 = document.createElement('button')
-    attack1.innerHTML=attack.type;
-    catchRow.append(attack1);
-
-    var attack2 = document.createElement('button')
-    attack1.innerHTML=attack.type;
-    catchRow.append(attack2);
-
-    var attack3 = document.createElement('button')
-    attack1.innerHTML=attack.type;
-    catchRow.append(attack3);
-    
-    for (let i = 0; i < battle.length; i++) {
-        characterSelect(battle[i]);
-        
-    }
-}
