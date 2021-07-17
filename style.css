@@ -10,6 +10,7 @@ body {
       grid-template-columns: 1fr 1fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
+  gap: 3vw;
   place-items: center;
 }
 
@@ -20,15 +21,25 @@ header {
   -ms-grid-column-span: 3;
   grid-column: 1/4;
   place-items: center;
+  padding-bottom: 7vh;
+  font-size: 44px;
+}
+
+header h2 {
+  padding-top: 10vh;
+  font-size: 36px;
 }
 
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
   -ms-grid-row: 2;
   grid-row: 2;
+  width: 100vw;
+  place-content: center;
 }
 
 #pokemonOne {
@@ -39,7 +50,9 @@ header {
   grid-column: 1/2;
   -ms-grid-row: 2;
   grid-row: 2;
+  width: 28vw;
   place-items: center;
+  padding-right: 3vw;
 }
 
 #pokemonTwo {
@@ -50,7 +63,9 @@ header {
   grid-column: 2/3;
   -ms-grid-row: 2;
   grid-row: 2;
+  width: 28vw;
   place-items: center;
+  padding-right: 3vw;
 }
 
 #pokemonThree {
@@ -61,11 +76,34 @@ header {
   grid-column: 3/4;
   -ms-grid-row: 2;
   grid-row: 2;
+  width: 28vw;
   place-items: center;
+  padding-right: 3vw;
 }
 
 img {
   height: 30vh;
   width: auto;
+  padding-left: 7vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+p {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  font-size: 42px;
+  padding-bottom: 3vh;
+}
+
+.attribute {
+  padding-bottom: 2.5vh;
+}
+
+button {
+  padding: 1vw;
 }
 /*# sourceMappingURL=style.css.map */
