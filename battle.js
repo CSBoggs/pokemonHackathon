@@ -28,10 +28,9 @@ function selectedPokemon(pokemonSelected) {
         if (pkm.pokemon === pokemonSelected) {
             return pkm.pokemon;
         }
-    } return"No pokemon found";
+    } return "No pokemon found";
 }
 
-console.log(selectedPokemon("dog"));
 
 // Battlepage variable declaration
 var header = document.getElementById("header");
@@ -60,7 +59,6 @@ function PokemonSelect(element){
     update();
 }
 
-
 // Clear html element function to reset gamestate
 
 function clearElement(myElement) {
@@ -77,6 +75,25 @@ function pokemonBattle() {
     clearElement(userPokemon);
     clearElement(cpuPokemon);
 }
+
+function makePokemonSprite(pokemonSelected) {
+    var pokemonSprite = document.createElement("div");
+    pokemonSprite.classList.add(userPokemonSprite);
+    pokemonSprite.id = pokemonSelected;
+
+    var pokemonName = document.createElement('h2');
+    pokemonName.innerText = pokemonSelected;
+    pokemonSprite.appendChild(pokemonName);
+
+var userPokemon = selectedPokemon(pokemonSelected);
+var userPokemonSprite = makePokemonSprite(pokemonSelected);
+battleViewport.id = userPokemon;
+userPokemonContainer.append(userPokemon);
+
+var cpu = selectedPokemon(pokemonSelected);
+cpuPkm = userPokemon;
+cpuPokemonContainer.appendChild(userPokemon);
+
 
 // var value = Cookies.get("name");
 // console.log(value);

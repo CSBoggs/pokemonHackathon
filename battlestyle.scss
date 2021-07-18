@@ -18,12 +18,19 @@
     grid-auto-rows: auto;
     #userPokemon{
         grid-column: 1/2;
+        grid-row: 1;
     }
     #userAttacks{
         grid-column: 2/3;
+        grid-row: 2;
     }
     #cpuAttacks {
         grid-column: 3/4;
+        grid-row: 2;
+    }
+    #cpuPokemon {
+        grid-column: 3/4;
+        grid-row: 1;
     }
 }
 
