@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+body {
+    background-image: url('/Projects/Pokemon/images/stadium.png');
+    background-position: center;
+    background-size: cover;
+}
+
 #gameViewport {
     display: grid;
     height: 90vh;
@@ -21,6 +27,11 @@
     #userPokemon{
         grid-column: 1/2;
         grid-row: 1;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        text-transform: uppercase;
+        padding-bottom: 3vh;
     }
     #userAttacks{
         grid-column: 2/3;
@@ -33,6 +44,11 @@
     #cpuPokemon {
         grid-column: 3/4;
         grid-row: 1;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        text-transform: uppercase;
+        padding-bottom: 3vh;
     }
 }
 
@@ -45,4 +61,22 @@
     display: grid;
     place-items: center;
     font-size: 66px;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    text-transform: uppercase;
+    padding-top: 3vh;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+p {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+button {
+    font-size: 36px;
 }
