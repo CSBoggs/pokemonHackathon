@@ -5,6 +5,7 @@
 
 #gameViewport {
     display: grid;
+    height: 90vh;
     #startButton {
         place-self: center;
         height: 5vh;
@@ -16,6 +17,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: auto;
+    place-items: center;
     #userPokemon{
         grid-column: 1/2;
         grid-row: 1;
@@ -37,4 +39,10 @@
 #attackViewport {
     display: grid;
     place-items: center;
+}
+
+#header {
+    display: grid;
+    place-items: center;
+    font-size: 66px;
 }
