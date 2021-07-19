@@ -67,11 +67,11 @@ function makePokemonSprite(pokemonSelected) {
 
     var pokemonName = document.createElement('h2');
     pokemonName.innerText = pokemonSelected;
-    pokemonSprite.appendChild(pokemonName);
+    pokemonSprite.appendChild(pokemonSprite);
 
     var pokemonImage = document.createElement("img");
     pokemonImage.src = '/Projects/Pokemon/images/squirtle.png';
-    pokemonSprite.appendChild(pokemonImage);
+    pokemonSprite.appendChild(pokemonSprite);
 
     var pokemonHealth = document.createElement('p');
     pokemonHealth.innerText = pokemonSelected.health;

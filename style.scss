@@ -1,9 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+    color: white;
+    text-shadow: 3px 3px 3px black;
 }
 
 body {
+    background-image: url('/Projects/Pokemon/images/Pokemon.jpg');
+    background-position: center;
+    background-size: cover;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -61,7 +66,7 @@ header {
 img {
     height: 30vh;
     width: auto;
-    padding-left: 7vw;
+    padding-left: 4.5vw;
     object-fit: cover;
 }
 
@@ -79,4 +84,7 @@ h3 {
 }
 button {
     padding: 1vw;
+    margin-bottom: 15vh;
+    color: black;
+    text-shadow: none;
 }
