@@ -51,7 +51,7 @@ function selectedPokemon(pokemonSelected) {
     } return "No pokemon found";
 }
 
-// create user selected pokemon containers, image, and stats
+// Create user selected pokemon containers, image, and stats
 
 function makePokemonSprite(pokemonSelected) {
     var pokemonSprite = document.createElement("div");
@@ -83,7 +83,7 @@ function makePokemonSprite(pokemonSelected) {
     return pokemonSprite;
 }
 
-// Battle logic
+// Battle logic and viewport populating
 
 pokemonBattle();
 
@@ -113,6 +113,7 @@ function pokemonBattle() {
     userAttacks.appendChild(createAttack);
 }
 
+//Function to refresh screen and pokemon HP values
 function refreshScreen(userPokemon, cpuPokemon) {
     var pokemonSprite = document.getElementById('userPokemon');
     var cpuPokemonSprite = document.getElementById('cpuPokemon');
@@ -121,6 +122,7 @@ function refreshScreen(userPokemon, cpuPokemon) {
     pokemonHealth[1].innerText = cpuPokemon.hp + "/" + cpuPokemon.hpCapacity;
 }
 
+//Function to initiate player turn and subsequently CPU turn
 function playerTurn(userPokemon, cpuPokemon) {
     cpuPokemon.hp -= userPokemon.attack;
     console.log(cpuPokemon);
@@ -134,6 +136,7 @@ function playerTurn(userPokemon, cpuPokemon) {
     } refreshScreen(userPokemon, cpuPokemon)
 }
 
+// Function to declare winner and end the game
 function declareWinner(isaWin) {
     var declaredWinner = document.createElement("p");
     if (isaWin = true) {
@@ -148,19 +151,3 @@ function declareWinner(isaWin) {
     header.appendChild(declaredWinner);
 }
 
-
-// function update(){
-//     Cookies.set("battle", chosenPokemon, {expires: 10});
-// }
-
-// function PokemonSelect(element){
-//     var parent = element.parentElement;
-//     var imgSrc = parent.querySelector('img').getAttribute('src');
-//     var Pname = parent.querySelector('h3').innerText;
-//     var PokemonInfo = {
-//         imgLink : imgSrc,
-//         name : Pname,
-//     }
-//     chosenPokemon.push(info);
-//     update();
-// }
