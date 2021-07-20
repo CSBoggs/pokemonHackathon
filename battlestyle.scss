@@ -12,10 +12,13 @@ body {
 #gameViewport {
     display: grid;
     height: 90vh;
-    #startButton {
+    #restartButton {
         place-self: center;
         height: 5vh;
         width: 25vw;
+        &.hidden {
+            display: none;
+        }
     }
 }
 

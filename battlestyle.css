@@ -15,10 +15,14 @@ body {
   height: 90vh;
 }
 
-#gameViewport #startButton {
+#gameViewport #restartButton {
   place-self: center;
   height: 5vh;
   width: 25vw;
+}
+
+#gameViewport #restartButton.hidden {
+  display: none;
 }
 
 #battleViewport {
